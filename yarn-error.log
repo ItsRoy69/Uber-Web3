@@ -1,0 +1,53 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\J\AppData\Local\node\corepack\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Users\J\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\J\bin;C:\Python311\Scripts;C:\Python311;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\ProgramData\chocolatey\bin;C:\msys64\mingw64\bin;C:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH;C:\Users\J\Downloads\apache-maven-3.9.0\bin;C:\Users\J\Downloads\apache-maven-3.9.0\bin;C:\Program Files\Java\jdk-19\bin;C:\Program Files\Amazon\AWSCLIV2;C:\Program Files\Go\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Users\J\AppData\Local\node\corepack\yarn\bin;C:\Program Files\GitHub CLI;C:\Program Files\apache-maven-3.9.1\bin;C:\Program Files\MongoDB\Server\6.0\bin;C:\Users\J\Downloads\mongosh-1.8.0-win32-x64\bin;C:\Program Files\Git LFS;C:\Program Files\nodejs;C:\Users\J\.cargo\bin;C:\Users\J\AppData\Local\Microsoft\WindowsApps;C:\Program Files\heroku\bin;C:\Users\J\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\J\go\bin;C:\Users\J\AppData\Local\Yarn\bin;C:\Users\J\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: UNKNOWN: unknown error, scandir 'F:\uber-clone-blockchain\node_modules\es-abstract\2019'
+
+npm manifest: 
+  {
+    "name": "uber-clone-blockchain",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint"
+    },
+    "dependencies": {
+      "@faker-js/faker": "^6.0.0-alpha.7",
+      "@sanity/client": "^3.1.0",
+      "ethers": "^5.5.4",
+      "mapbox-gl": "^2.7.0",
+      "next": "12.1.0",
+      "react": "17.0.2",
+      "react-dom": "17.0.2",
+      "react-icons": "^4.3.1"
+    },
+    "devDependencies": {
+      "autoprefixer": "^10.4.2",
+      "eslint": "8.10.0",
+      "eslint-config-next": "12.1.0",
+      "postcss": "^8.4.7",
+      "tailwindcss": "^3.0.23"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
