@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "uber-blockchain"
+    "name": "gold-flamingo"
   },
   "api": {
-    "projectId": "jl5yrfd1",
+    "projectId": "0274de1v",
     "dataset": "production"
   },
   "plugins": [
