@@ -15,8 +15,8 @@ const Map = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/coderweb3/clgqlo13q00jk01qy2cgb77z8',
-      center: [-.2, 39.39],
-      zoom: 4,
+     center: [-99.29011, 39.39172],
+      zoom: 3,
     })
 
     if (pickupCoordinates) {
