@@ -6,7 +6,7 @@ import { UberContext } from '../context/uberContext'
 const style = {
   wrapper: `h-full flex flex-col`,
   title: `text-gray-500 text-center text-xs py-2 border-b`,
-  carList: `flex flex-col flex-1 overflow-auto scrollbar-hide`,
+  carList: `flex flex-col flex-1 overflow-scroll`,
   car: `flex p-3 m-2 items-center border-2 border-white`,
   selectedCar: `border-2 border-black flex p-3 m-2 items-center`,
   carImage: `h-14`,
@@ -60,7 +60,6 @@ const RideSelector = () => {
               className={style.carImage}
               height={50}
               width={50}
-              alt="carImage"
             />
             <div className={style.carDetails}>
               <div className={style.service}>{car.service}</div>
@@ -70,7 +69,7 @@ const RideSelector = () => {
               <div className={style.price}>
                 {((basePrice / 10 ** 5) * car.priceMultiplier).toFixed(5)}
               </div>
-              <Image src={ethLogo} height={25} width={40} alt='ethLogo' />
+              <Image src={ethLogo} height={25} width={40} />
             </div>
           </div>
         ))}

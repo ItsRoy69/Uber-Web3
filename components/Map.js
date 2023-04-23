@@ -3,7 +3,7 @@ import mapboxgl from 'mapbox-gl'
 import { UberContext } from '../context/uberContext'
 
 const style = {
-  wrapper: `flex-1 h-full w-full absolute bottom-0`,
+  wrapper: `flex-1 h-full w-full`,
 }
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
@@ -15,8 +15,8 @@ const Map = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/coderweb3/clgqlo13q00jk01qy2cgb77z8',
-      center: [-.2, 39.39],
-      zoom: 4,
+      center: [-99.29011, 39.39172],
+      zoom: 3,
     })
 
     if (pickupCoordinates) {

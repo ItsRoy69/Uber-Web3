@@ -4,7 +4,7 @@ import { UberContext } from '../context/uberContext'
 
 const style = {
   wrapper: `pt-2`,
-  searchHeader: `w-full font-bold text-left flex items-center text-3xl p-4 overflow-auto scrollbar-hide`,
+  searchHeader: `w-full font-bold text-left flex items-center text-3xl p-4 overflow-hidden`,
   inputBoxes: `flex flex-col mb-4 relative`,
   inputBox: `h-10 mx-4 border-2 bg-[#eeeeee] flex items-center my-1 py-1 px-2`,
   focusedInputBox: `border-black`,
@@ -20,7 +20,7 @@ const LocationSelector = () => {
   return (
     <div className={style.wrapper}>
       <div className={style.searchHeader}>
-        {inFocus === 'from' ? 'Your Pick up loc?' : 'Where to?'}
+        {inFocus === 'from' ? 'Where can we pick you up?' : 'Where to?'}
       </div>
       <div className={style.inputBoxes}>
         <div
@@ -36,14 +36,13 @@ const LocationSelector = () => {
                 d='M12 14a2 2 0 100-4 2 2 0 000 4zm5-2a5 5 0 11-10 0 5 5 0 0110 0z'
               />
             </svg>
-          </div>     
+          </div>
           <input
             className={style.input}
             placeholder='Enter pickup location'
             value={pickup}
             onChange={e => setPickup(e.target.value)}
             onFocus={() => setInFocus('from')}
-            
           />
         </div>
         <div className={style.verticalLine} />
