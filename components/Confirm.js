@@ -5,8 +5,8 @@ import { ethers } from 'ethers'
 
 const style = {
   wrapper: `flex-1 h-full flex flex-col justify-between`,
-  rideSelectorContainer: `h-full flex flex-col overflow-scroll`,
-  confirmButtonContainer: ` border-t-2 cursor-pointer z-10`,
+  rideSelectorContainer: `h-full flex flex-col overflow-auto scrollbar-hide mb-20`,
+  confirmButtonContainer: ` cursor-pointer z-20 absolute bottom-[5px] bg-white left-0 right-0`,
   confirmButton: `bg-black text-white m-4 py-4 text-center text-xl`,
 }
 

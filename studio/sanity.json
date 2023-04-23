@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "gold-flamingo"
+    "name": "uber-web3"
   },
   "api": {
-    "projectId": "0274de1v",
+    "projectId": "t78ck3tt",
     "dataset": "production"
   },
   "plugins": [
