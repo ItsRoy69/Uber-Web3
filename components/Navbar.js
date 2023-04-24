@@ -32,22 +32,17 @@ const Navbar = () => {
       className="bg-black hidden md:flex md:items-center absolute right-0 top-16 md:static w-1/2 md:w-fit"
       id="collapseLink"
     >
-      <ul className="flex flex-col md:flex-row md:justify-end text-left md:text-center text-gray-50 space-x-6">
-        <Link href={"#"}>
-          <li className="ml-6 hover:text-white hover:scale-125 cursor-pointer transition ease-in-out delay-150">
-            Drive
-          </li>
-        </Link>
+      <ul className="flex flex-col md:flex-row md:justify-end text-left md:text-center text-gray-50 space-x-6">        
 
-        <Link href={"#"}>
+        {/* <Link href={"/"}>
           <li className=" hover:text-white hover:scale-125 cursor-pointer transition ease-in-out delay-150">
             Ride
           </li>
-        </Link>
+        </Link> */}
 
-        <Link href={"#"}>
+        <Link href={"/contact"}>
           <li className=" hover:text-white hover:scale-125 cursor-pointer transition ease-in-out delay-150">
-            Help
+            Contact Us
           </li>
         </Link>
       </ul>
@@ -58,7 +53,9 @@ const Navbar = () => {
         <div className={style.userImageContainer}>
           <Image
             className={style.userImage}
-            src={avatar}
+            src={currentUser && currentUser.imageUrl
+              ? currentUser.imageUrl
+              : avatar}
             width={40}
             height={40}
             alt="userImage"
