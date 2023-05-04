@@ -2,6 +2,8 @@ import Image from 'next/image'
 import ethLogo from '../assets/eth-logo.png'
 import { useEffect, useContext, useState } from 'react'
 import { UberContext } from '../context/uberContext'
+import mapboxgl from 'mapbox-gl'
+import * as turf from '@turf/turf'
 
 const style = {
   wrapper: `h-full flex flex-col`,
@@ -17,11 +19,16 @@ const style = {
   price: `mr-[-0.8rem]`,
 }
 
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+
 const RideSelector = () => {
   const [carList, setCarList] = useState([])
-  const { selectedRide, setSelectedRide, setPrice, basePrice } =
+  const { selectedRide, setSelectedRide, setPrice, basePrice,  pickupCoordinates, dropoffCoordinates } =
     useContext(UberContext)
 
+    const [distance, setDistance] = useState(null);
+
+  
   console.log(basePrice)
 
   useEffect(() => {
@@ -37,6 +44,42 @@ const RideSelector = () => {
       }
     })()
   }, [])
+
+  useEffect(() => {
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/coderweb3/clgqlo13q00jk01qy2cgb77z8',
+      center: [-.2, 39.39],
+      zoom: 4,
+    })
+
+    if (pickupCoordinates) {
+      addToMap(map, pickupCoordinates)
+    }
+
+    if (dropoffCoordinates) {
+      addToMap(map, dropoffCoordinates)
+    }
+
+    if (pickupCoordinates && dropoffCoordinates) {
+      const distance = turf.distance(
+        turf.point(pickupCoordinates),
+        turf.point(dropoffCoordinates)
+      )
+
+      console.log('Distance:', distance)
+      setDistance(distance);
+      
+      map.fitBounds([dropoffCoordinates, pickupCoordinates], {
+        padding: 400,
+      })
+    }
+  }, [pickupCoordinates, dropoffCoordinates])
+
+  const addToMap = (map, coordinates) => {
+    const marker1 = new mapboxgl.Marker().setLngLat(coordinates).addTo(map)
+  }
+
 
   return (
     <div className={style.wrapper}>
@@ -71,6 +114,11 @@ const RideSelector = () => {
                 {((basePrice / 10 ** 5) * car.priceMultiplier).toFixed(5)}
               </div>
               <Image src={ethLogo} height={25} width={40} alt='ethLogo' />
+            </div>
+            <div className={style.priceContainer}>
+              <div className={style.price} id='map'>
+                {(distance).toFixed(1)}  km
+              </div>
             </div>
           </div>
         ))}
